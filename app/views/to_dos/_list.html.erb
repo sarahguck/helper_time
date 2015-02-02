@@ -1,0 +1,8 @@
+<%= content_tag(:li, class: "to_do to_do_#{to_do.id}") do %>
+  <div class="padded">
+    <h6>
+      <%= x(to_do, :class => 'top_right') %>
+      <%= to_do.name %>
+    </h6>
+  </div>
+<% end %>

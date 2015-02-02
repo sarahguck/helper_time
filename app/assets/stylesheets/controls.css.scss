@@ -1,0 +1,107 @@
+// controls
+$controls_h:1.4rem;
+.controls{
+  height:$controls_h;
+  text-align: center;
+}
+.control{
+  position:relative;
+  display:inline-block;
+  vertical-align: top;
+  margin:0 0.4rem;
+}
+
+
+// pie chart
+$pie_w:2rem;
+.pie{
+  margin-top:($controls_h - $pie_w) / 2;
+  width:$pie_w;
+  height:$pie_w;    
+}
+.pie_bg{
+  width:100%;
+  height:100%;
+  border-radius:$pie_w;
+  background:#000;
+}
+.slice_inner {
+  position: absolute;
+  width: $pie_w;
+  height: $pie_w;
+  -moz-border-radius: $pie_w/2;
+  -webkit-border-radius: $pie_w/2;
+  -o-border-radius: $pie_w/2;
+  border-radius: $pie_w/2;
+  clip: rect(0px, $pie_w/2, $pie_w, 0px);
+}
+.slice_outer {
+  position: absolute;
+  top:0;
+  left:0;
+  width: $pie_w;
+  height: $pie_w;
+  -moz-border-radius: $pie_w/2;
+  -webkit-border-radius: $pie_w/2;
+  -o-border-radius: $pie_w/2;
+  border-radius: $pie_w/2;
+  clip: rect(0px, $pie_w, $pie_w, $pie_w/2);
+}
+.slice_inner {
+  background-color: rgb(255, 255, 0);
+}
+
+// x
+$x_h:1rem;
+.x{
+  margin-top:($controls_h - $x_h) / 2;
+  height: $x_h;
+  width: $x_h;
+  line-height: $x_h;
+  text-align: center;
+  background: #fff;
+  text-decoration: none;
+  z-index:1;
+  border: 1px solid rgb(0, 0, 255);
+}
+.x:hover{
+  background:rgb(255, 0, 0);
+  color:rgb(255, 0, 0);
+  border-color:rgb(255, 0, 0);
+}
+
+// daily checkbox
+form.control{
+  margin-top:($controls_h - $pie_w) / 2;
+}
+.make_fake_checkbox.smiley{
+  .label{
+    display:none;
+  }
+  label{
+    display:inline-block;
+    width:$pie_w;
+    height:$pie_w;
+    border:1px solid #000;
+    background:#fff;
+    color:#fff;
+    overflow:hidden;
+    -moz-border-radius: $pie_w;
+    -webkit-border-radius: $pie_w;
+    border-radius: $pie_w;
+    cursor:pointer;
+    background-position:-1px -1px, center;
+  }
+  label:hover{
+    background-image:image-url('frowny.png');
+  }
+  input[type="checkbox"]:checked + label{
+    background-image:image-url('smiley.png');
+  }
+}
+
+// sort triangles
+.triangle{
+  font-size:30px;
+  line-height:$controls_h;
+}

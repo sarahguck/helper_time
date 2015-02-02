@@ -1,0 +1,19 @@
+// update progress pie
+var li = $('.entry_<%= @entry.id %>');
+li.find('h3').html('<%= @entry.name %>');
+li.each(function(){
+  if ($(this).find('.pie').length) {
+    console.log($(this).find('.pie'));
+    $(this).find('.pie').remove();
+    $(this).find('.controls').prepend('<%= j pie(@entry) %>');      
+  }
+});
+<% if @entry.daily %>
+  if (!$('#daily_entries .entry_<%= @entry.id %>').length) {
+    $('#daily_entries').append('<%= j daily(@entry) %>');
+    Site.initElem.call($('#daily_entries .entry_<%= @entry.id %>'));
+    Site.updateDailies();
+  }
+<% else %>
+  Site.removeDaily('<%= @entry.id %>');
+<% end %>

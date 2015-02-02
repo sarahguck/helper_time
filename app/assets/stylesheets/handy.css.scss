@@ -1,0 +1,66 @@
+// positioning
+.fit_abs{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+.fit_fix{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+img.fit_abs{
+  height:auto;
+}
+
+.top_right{
+  position:absolute;
+  top:0px;
+  right:0px;
+}
+
+// scrolling
+.scroll_y{
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+// display
+.ib{
+  float:none !important;
+  vertical-align: top;
+  display:inline-block;
+  zoom:1;
+}
+.not_displayed{
+  display:none;
+}
+.show{
+  display:block !important;
+}
+.fade{
+  // @include fade;
+  visibility:visible;
+  opacity:1.0;
+}
+.hidden{
+  visibility:hidden;
+  opacity:0;    
+}
+
+// vertical centering
+.center_vert{
+  display:inline-block;
+  zoom:1;
+  vertical-align: middle;
+  width:100%;
+}
+.center_vert.hidden{
+  width:0;
+  height:100%;
+}
+

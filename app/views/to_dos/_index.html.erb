@@ -1,0 +1,8 @@
+<br>
+<% bg = false if !local_assigns[:bg] %>
+<%= h4('To Do', :bg => bg) %>
+<%= content_tag(:ol, :id => id) do %>
+  <% to_dos.each do |td| %>
+    <%= to_do(td) %>
+  <% end %>
+<% end %>

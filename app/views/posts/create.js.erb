@@ -1,0 +1,6 @@
+$('#post_content').val('').blur();
+$('#posts').prepend('<%= j render("posts/list", :post => @post) %>');
+
+<% if @entry %>
+  $('#<%= css_class(@entry) %>_posts').prepend('<%= j render("posts/list", :post => @post) %>');
+<% end %>

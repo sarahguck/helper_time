@@ -1,0 +1,56 @@
+<div class="half left">
+  <div class="padded">
+    <div>
+
+      <%= tab_headings(['Everything', 'Vocab']) %>
+
+      <div class="tab_contents">
+        <%= tab_content('Everything', :current => true) do %>
+          <%= render('entries/new') %>
+          <%= render('entries/index', :entries => @entries, :id => 'all_entries') %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="half right">
+  <div class="padded">
+    <div>
+
+      <%= tab_headings(['Today', 'Log', 'ToDo']) %>
+
+      <div class="tab_contents">
+        <%= tab_content('Today', :current => true) do %>
+          <%= render('today/index', :entries => @dailies, :id => 'daily_entries') %>
+        <% end %>
+
+        <%= tab_content('Log') do %>
+          <%= render('posts/new') %>
+          <%= render('posts/index', :posts => @posts, :id => 'posts') %>
+        <% end %>
+
+        <%= tab_content('ToDo') do %>
+          <%= render('to_dos/new') %>
+          <%= render('to_dos/index', :to_dos => @to_dos, :id => 'to_dos') %>
+        <% end %>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="filters">  
+  <div class="filter init">
+    <label>T<br>A<br>G<br></label>
+    <input data-url="tag" type="text" />
+  </div>
+  <div class="filter init">
+    <label>FM<br>OA<br>RT</label>
+    <input data-url="format" type="text" />
+  </div>
+</div>
+
+<%= center_vert(:container_id => 'alert', :container_class => 'fit_fix', :content_id => 'alert_text'){''} %>

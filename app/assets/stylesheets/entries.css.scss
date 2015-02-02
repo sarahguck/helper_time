@@ -1,0 +1,71 @@
+@import 'variables';
+
+// index
+li.entry{
+  position: relative;
+  display:block;
+  border: 2px outset buttonface;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-color: buttonface;  
+  cursor:pointer;
+  h3{
+    padding-top:0.2rem;
+    padding-bottom:0.2rem;
+  }
+}
+
+li.daily{
+  position: relative;
+  display:block;
+  border: 2px outset buttonface;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  background-color: rgb(255, 255, 224);  
+  cursor:pointer;
+  h3{
+    padding-top:0.2rem;
+    padding-bottom:0.2rem;
+  }
+}
+
+// show/update
+#entry{
+  position:fixed;
+  width:50%;
+  left:0;
+  top:0;
+  height:100%;
+  background:#fff;
+  display:none;
+
+}
+
+#entry .post{
+  background:$manila;
+}
+
+
+// form
+.edit_entry{
+  input, textarea{
+    width:100%;
+    box-sizing:border-box;
+  }
+  input[type="checkbox"]{
+    width:auto;
+  }
+  textarea{
+    height:80px;
+  }
+}
+
+#entry_name{
+  font-size:24px;
+}

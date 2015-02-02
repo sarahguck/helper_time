@@ -1,0 +1,13 @@
+@import 'variables';
+
+// index
+li.to_do{
+  position: relative;
+  display:block;
+  cursor:pointer;
+  h3{
+    padding-top:0.2rem;
+    padding-bottom:0.2rem;
+    background:rgb(245, 222, 179);
+  }
+}

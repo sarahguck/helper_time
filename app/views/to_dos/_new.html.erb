@@ -1,0 +1,4 @@
+<%= form_tag({controller: 'to_dos', action: 'create'}, remote: true, method: 'post', class: 'with_col_right') do %>
+  <%= text_field :to_do, :name %>
+  <%= submit_tag('ok', class: 'big col_right') %>
+<% end %>

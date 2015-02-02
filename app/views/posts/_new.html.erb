@@ -1,0 +1,7 @@
+<%= form_tag({controller: 'posts', action: 'create'}, remote: true, method: 'post', class: 'with_col_right') do %>
+  <%= text_area :post, :content %>
+  <% if local_assigns[:entry] %>
+    <%= hidden_field :post, :entry_id, value: entry.id  %>
+  <% end %>
+  <%= submit_tag('ok', class: 'big col_right') %>
+<% end %>

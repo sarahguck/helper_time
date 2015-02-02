@@ -1,0 +1,9 @@
+<%= content_tag(:li, class: "post post_#{post.id}") do %>
+  <div class="padded">
+    <h6>
+      <%= x(post, :class => 'top_right') %>
+      <%= post.date %>
+    </h6><br>
+    <%= content_tag(:p, post.content) %>
+  </div>
+<% end %>

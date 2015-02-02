@@ -1,0 +1,1 @@
+Site.addTab('<%= tab_heading(@query.titleize, false) %>', '<%= j tab_content(@query.titleize){ render("entries/index", :id => "#{@query}_entries", :entries => @entries) } %>', true);

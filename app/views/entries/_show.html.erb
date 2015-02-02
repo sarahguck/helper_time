@@ -1,0 +1,29 @@
+<% if @entry %>
+  <div class="fit_abs scroll_y">
+    <div class="padded clear_header">
+      <div>
+        <%######################%>
+        <%= form_for(@entry, remote: true) do |f| %>
+          <%= f.text_field :name %>
+
+          <div class="float_fields clearfix">
+            <div class="field"><%= f.select :format, options: Entry.formats %></div>
+            <%= field(f, :text_field, :progress) %>
+            <%= field(f, :text_field, :total) %>
+            <%= field(f, :check_box, :daily, class: 'oval') %>            
+          </div>
+          <%= field(f, :text_area, :notes) %>
+          <%= field(f, :text_field, :tags) %>
+
+          <%= f.submit class: 'hidden_submit not_displayed' %>
+        <% end %>
+
+        <%= render('posts/new', :entry => @entry) %>
+        <%= render('posts/index', :posts => @entry.posts, :id => "#{css_class(@entry)}_posts", :bg => '#fff') %>
+
+
+        <%######################%>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,8 @@
+<br>
+<% bg = false if !local_assigns[:bg] %>
+<%= h4('Log', :bg => bg) %>
+<%= content_tag(:ol, :id => id) do %>
+  <% posts.each do |p| %>
+    <%= render('posts/list', :post => p) %>
+  <% end %>
+<% end %>

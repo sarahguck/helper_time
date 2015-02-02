@@ -1,0 +1,4 @@
+$('#entry_name').val('').blur();
+$('#all_entries').prepend('<%= j entry(@entry) %>');
+Site.initElem.call($('#all_entries .entry_<%= @entry.id %>'));
+// Site.initExpandable.call($('#entries li').first());

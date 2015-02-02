@@ -1,0 +1,14 @@
+<% alias_id = "#{p_class(daily)}_#{daily.id}" %>
+<%= content_tag(:li, class: "alias_expandable init pointer daily with_big_col_right", id: "#{alias_id}_alias", data: {alias_id: alias_id, id: daily.id}) do %>
+  <div class="triangle"></div>
+    <%= content_span(class: 'expander'){daily.name} %>
+    <div class="controls big_col_right">
+      <%= pie(daily) %>
+      <%= form_for(daily, remote: true, html: {class: 'control'}) do |f| %>
+        <%= f.check_box(:daily_completed, id: "#{alias_id}_completed_today", data: { id: "#{p_class(daily)}_#{daily.id}"}) %>
+        <%= f.label("#{daily.id}_completed_today", '&nbsp;'.html_safe, class: 'pointer') %>
+        <%= f.submit class: 'hidden_submit not_displayed' %>
+      <% end %>
+    </div>
+<% end %>
+blah
